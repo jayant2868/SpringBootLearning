@@ -37,7 +37,7 @@
 			<artifactId>lombok</artifactId>
 			<scope>annotationProcessor</scope>
 		</dependency>
-
+		<!-- Adding actuator dependency -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
