@@ -1,0 +1,3 @@
+localhost::8080/actuator/bean - List of all beans registered in the application(internal as well as custom beans)
+localhost::8080/actuator/threaddump - list of all threads running in the application
+localhost::8080/actuator/mappings - list all of the request mappings of the app, basically endpoint exposing
