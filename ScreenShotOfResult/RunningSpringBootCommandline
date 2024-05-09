@@ -1,0 +1,10 @@
+Check for the java installed in the system
+-> echo %JAVA_HOME%
+-> java Version
+
+To run the springboot application:
+-> mvnw package (create a jar file)
+-> java -jar <Name generated dueing package creation>
+eg: java -jar target/jayantLearning-0.0.1-SNAPSHOT.jar
+or
+-> mvnw spring-boot:run
