@@ -1,4 +1,4 @@
-package com.jayantsharma.learning.jayantLearning;
+package com.jayantsharma.learning.Util;
 
 public interface Coach {
 
