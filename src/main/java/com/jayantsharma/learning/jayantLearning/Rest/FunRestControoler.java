@@ -1,6 +1,7 @@
 package com.jayantsharma.learning.jayantLearning.Rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,7 +24,7 @@ public class FunRestControoler {
     //define a constructor for dependency injection.
     //@Autowired tells the Spring to inject a dependency, also if you have only one constructor the @Autowired on constructor is optional.
     @Autowired
-    public FunRestControoler(Coach theCoach)
+    public FunRestControoler(@Qualifier("baseBallCoach") Coach theCoach)
     {
         myCoach = theCoach;
     }

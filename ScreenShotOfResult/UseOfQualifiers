@@ -1,0 +1,29 @@
+Here we created 3 new classes 
+1. BaseBallCoach.java
+2. TennisCoach.java
+3. TrackCoach.java
+
+Now while doing the dependency injection for constructor and setter 
+1. constructor
+@Autowired
+    public FunRestControoler(Coach theCoach)
+    {
+        myCoach = theCoach;
+    }
+ 2. setter
+ @Autowired
+    public void setCoach(Coach theCoach)
+    {
+        myCoach = theCoach;
+    }
+
+Now we have 4 implementation of Coach (BaseBallCoach,TennisCoach,TrackCoach, CricketCoach)
+Springboot is not able to understand which on to inject, so it throws an error
+
+Parameter 0 of method setCoach in com.jayantsharma.learning.jayantLearning.Rest.DemoSetterController required a single bean, but 4 were found:
+        - baseBallCoach: defined in file [C:\SpringBootLearning\target\classes\com\jayantsharma\learning\Util\BaseBallCoach.class]
+        - cricketCoach: defined in file [C:\SpringBootLearning\target\classes\com\jayantsharma\learning\Util\CricketCoach.class]
+        - tennisCoach: defined in file [C:\SpringBootLearning\target\classes\com\jayantsharma\learning\Util\TennisCoach.class]
+        - trackCoach: defined in file [C:\SpringBootLearning\target\classes\com\jayantsharma\learning\Util\TrackCoach.class]
+
+Now to resolve this we use Qualifier annotation so that springboot knows which class object needs to be injected.
