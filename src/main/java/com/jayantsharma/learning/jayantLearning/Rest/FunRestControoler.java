@@ -1,8 +1,11 @@
 package com.jayantsharma.learning.jayantLearning.Rest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.jayantsharma.learning.jayantLearning.Coach;
 
 @RestController
 public class FunRestControoler {
@@ -13,6 +16,23 @@ public class FunRestControoler {
 
     @Value("${team.name}")
     private String teamName;
+
+    //define a private field for the dependency.
+    private Coach myCoach;
+
+    //define a constructor for dependency injection.
+    //@Autowired tells the Spring to inject a dependency, also if you have only one constructor the @Autowired on constructor is optional.
+    @Autowired
+    public FunRestControoler(Coach theCoach)
+    {
+        myCoach = theCoach;
+    }
+
+    @GetMapping("/dailyWorkout")
+    public String getDailyWorkouts()
+    {
+        return myCoach.getDailyWorkout();
+    }
 
     //expose new endpoint for "teaminfo"
 
