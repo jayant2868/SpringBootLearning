@@ -29,7 +29,7 @@ public class DemoSetterController {
 
     // setter injection
     @Autowired
-    public void setCoach(@Qualifier("tennisCoach")Coach theCoach) // look at the naming, the first letter of the classname inside qualifier should be small case.
+    public void setCoach(@Qualifier("randomBeanId")Coach theCoach) // look at the naming, the first letter of the classname inside qualifier should be small case.
     {
         myCoach = theCoach;
     }
